@@ -17,8 +17,6 @@ class Team
   end
 end
 
-
-
 giants   = Team.new(67, 45, 8)
 tigers   = Team.new(60, 53, 7)
 dragons  = Team.new(60, 55, 5)
@@ -34,15 +32,7 @@ baystars.show_team_result('baystars')
 carp.show_team_result('carp ')
 swallows.show_team_result('swallows')
 
-#p giants
-#p tigers
-#p dragons
-#p baystars
-#p carp
-#p swallows
 
-#team=Team.new(name, win, lose, draw)
-#team.show_team_result()
 
 
 
