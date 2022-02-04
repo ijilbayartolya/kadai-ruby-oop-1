@@ -1,32 +1,48 @@
 class Team
 
-  attr_accessor :name, :win, :lose, :draw
+  attr_accessor :win, :lose, :draw
 
-  def initialize (nname, wwin, llose, ddraw)
-    self.name = nname
-    self.win = wwin
-    self.lose = llose
-    self.draw = ddraw
+  def initialize ( win, lose, draw)
+    self.win = win
+    self.lose = lose
+    self.draw = draw
   end
   def calc_win_rate(win, lose)
     return win.to_f/(win+lose)
   end
   
-  def show_team_result()
-    (0..5).each do |n|
-      a = calc_win_rate(win[n],lose[n])
-      puts "#{self.name[n]}の2020年の成績は #{self.win[n]}勝,#{self.lose[n]}敗, #{self.draw[n]}分, 勝率は #{a}です。"
-    end
+  def show_team_result(name)
+      rate = calc_win_rate(win,lose)
+      puts "#{name}の2020年の成績は #{self.win}勝,#{self.lose}敗, #{self.draw}分, 勝率は #{rate}です。"
   end
 end
 
-name = ['Giants', 'Tigers', 'Dragons', 'BayStars', 'Carp', 'Swallows']
-win = [67, 60, 60, 56, 52, 41]
-lose = [45, 53, 55, 58, 56, 69]
-draw = [8, 7, 5, 6, 12, 10]
 
-team=Team.new(name, win, lose, draw)
-team.show_team_result()
+
+giants   = Team.new(67, 45, 8)
+tigers   = Team.new(60, 53, 7)
+dragons  = Team.new(60, 55, 5)
+baystars = Team.new(56, 58, 6)
+carp     = Team.new(52, 56, 12)
+swallows = Team.new(41, 69, 10)
+
+# show_team_resultの呼び出し
+giants.show_team_result('giants')
+tigers.show_team_result('tigers')
+dragons.show_team_result('dragons')
+baystars.show_team_result('baystars')
+carp.show_team_result('carp ')
+swallows.show_team_result('swallows')
+
+#p giants
+#p tigers
+#p dragons
+#p baystars
+#p carp
+#p swallows
+
+#team=Team.new(name, win, lose, draw)
+#team.show_team_result()
 
 
 
